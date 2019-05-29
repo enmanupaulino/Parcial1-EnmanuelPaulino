@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial1_EnmanuelPaulino.UI.Registro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Parcial1_EnmanuelPaulino
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroProducto f = new RegistroProducto();
+            f.Show();
         }
     }
 }

@@ -81,6 +81,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Registro\RegistroProducto.resx">
       <DependentUpon>RegistroProducto.cs</DependentUpon>
@@ -106,6 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Script\Script.sql" />
+    <None Include="Resources\iconfinder_f-cross_256_282471.png" />
+    <None Include="Resources\iconfinder_Notes_32519.png" />
+    <None Include="Resources\iconfinder_Download_1031520.png" />
+    <None Include="Resources\iconfinder_system-search_118797.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

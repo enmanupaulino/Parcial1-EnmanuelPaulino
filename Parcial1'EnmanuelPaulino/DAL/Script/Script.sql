@@ -6,7 +6,7 @@ create table RegistroProductos(
 
 ProductoId int primary key identity ,
 Descripcion varchar (max),
-Exixtencia decimal,
+Existencia decimal,
 Costo decimal ,
 ValorInventario decimal
 
