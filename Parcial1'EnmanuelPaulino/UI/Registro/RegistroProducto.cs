@@ -1,4 +1,5 @@
-﻿using Parcial1_EnmanuelPaulino.Entidades;
+﻿using Parcial1_EnmanuelPaulino.BLL;
+using Parcial1_EnmanuelPaulino.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +52,29 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-
+            Productos productos = new Productos();
+            bool paso = false;
+            if (!Validar())
+                return;
+            productos = LlenaClase();
+            Limpiar();
+            //determinar si es guardar o modificar
+            if (IdnumericUpDown.Value == 0)
+                paso = ProductosBLL.Guardar(productos);
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No se puede modificar un producto no exixtente");
+                    return;
+                }
+                paso = ProductosBLL.Modifircar(productos);
+            }
+            //informar resultado
+            if (paso)
+                MessageBox.Show("Producto Guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Error al guardar prodcuto", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
