@@ -17,12 +17,24 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             InitializeComponent();
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+       
+
+        private void GuardarButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void ModificarButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
         {
 
         }

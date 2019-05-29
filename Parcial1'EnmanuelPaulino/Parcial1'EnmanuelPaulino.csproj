@@ -101,7 +101,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resource\" />
     <Folder Include="UI\Consulta\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>

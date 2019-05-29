@@ -100,7 +100,6 @@
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(232, 23);
             this.DescripciontextBox.TabIndex = 9;
-            this.DescripciontextBox.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // ExistencianumericUpDown
             // 
@@ -131,7 +130,7 @@
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.Button4_Click);
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // ModificarButton
             // 
@@ -144,6 +143,7 @@
             this.ModificarButton.Text = "Modificar";
             this.ModificarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ModificarButton.UseVisualStyleBackColor = true;
+            this.ModificarButton.Click += new System.EventHandler(this.ModificarButton_Click);
             // 
             // GuardarButton
             // 
@@ -156,6 +156,7 @@
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // BuscarButton
             // 
@@ -168,6 +169,7 @@
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // RegistroProducto
             // 
