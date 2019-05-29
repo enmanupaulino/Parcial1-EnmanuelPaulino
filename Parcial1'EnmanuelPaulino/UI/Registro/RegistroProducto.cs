@@ -42,6 +42,12 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             productos.Costo = Convert.ToInt32(CostonumericUpDown);
             return productos;
         }
+        private bool ExisteEnLaBaseDeDatos()
+        {
+            Productos productos = new Productos();
+            return (productos != null);
+        }
+
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
