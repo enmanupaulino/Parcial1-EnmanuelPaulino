@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial1_EnmanuelPaulino.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,13 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             CostonumericUpDown.Value = 0;
             
         }
-
+        private void LlenaCampo(Productos productos)
+        {
+            IdnumericUpDown.Value = productos.ProductoId;
+            DescripciontextBox.Text = productos.Descripcion;
+            ExistencianumericUpDown.Value = productos.Existencia;
+            CostonumericUpDown.Value = productos.Costo;
+        }
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
