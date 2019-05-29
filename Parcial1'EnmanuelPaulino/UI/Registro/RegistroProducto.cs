@@ -33,14 +33,16 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             ExistencianumericUpDown.Value = productos.Existencia;
             CostonumericUpDown.Value = productos.Costo;
         }
-         private void LlenaClase()
+         private  Productos LlenaClase()
         {
             Productos productos = new Productos();
             productos.ProductoId = Convert.ToInt32(IdnumericUpDown);
             productos.Descripcion = DescripciontextBox.Text;
             productos.Existencia = Convert.ToInt32(ExistencianumericUpDown);
             productos.Costo = Convert.ToInt32(CostonumericUpDown);
+            return productos;
         }
+
         private void GuardarButton_Click(object sender, EventArgs e)
         {
 
