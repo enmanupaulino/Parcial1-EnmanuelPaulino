@@ -77,6 +77,18 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
                 MessageBox.Show("Error al guardar prodcuto", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+        private bool Validar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+            if (DescripciontextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(DescripciontextBox, "Falta la descripcion del producto");
+                DescripciontextBox.Focus();
+                paso = false;
+            }
+            return paso;
+        }
 
         private void ModificarButton_Click(object sender, EventArgs e)
         {
