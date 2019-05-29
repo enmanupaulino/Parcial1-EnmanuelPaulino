@@ -17,10 +17,19 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             InitializeComponent();
         }
 
-       
+       private void Limpiar()
+        {
+            IdnumericUpDown.Value = 0;
+            DescripciontextBox.Text = string.Empty;
+            ExistencianumericUpDown.Value = 0;
+            CostonumericUpDown.Value = 0;
+            
+        }
+
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
+
 
         }
 
