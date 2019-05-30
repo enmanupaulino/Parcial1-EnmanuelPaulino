@@ -37,10 +37,10 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
          private  Productos LlenaClase()
         {
             Productos productos = new Productos();
-            productos.ProductoId = Convert.ToInt32(IdnumericUpDown);
+            productos.ProductoId = 0;
             productos.Descripcion = DescripciontextBox.Text;
-            productos.Existencia = Convert.ToInt32(ExistencianumericUpDown);
-            productos.Costo = Convert.ToInt32(CostonumericUpDown);
+            productos.Existencia = 0;
+            productos.Costo = 0;
             return productos;
         }
         private bool ExisteEnLaBaseDeDatos()

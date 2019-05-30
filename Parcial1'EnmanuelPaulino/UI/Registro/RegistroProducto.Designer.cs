@@ -106,8 +106,14 @@
             // 
             // ExistencianumericUpDown
             // 
+            this.ExistencianumericUpDown.DecimalPlaces = 3;
             this.ExistencianumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExistencianumericUpDown.Location = new System.Drawing.Point(96, 67);
+            this.ExistencianumericUpDown.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ExistencianumericUpDown.Name = "ExistencianumericUpDown";
             this.ExistencianumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.ExistencianumericUpDown.TabIndex = 10;
