@@ -97,12 +97,28 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
+            int Id;
+            Productos productos = new Productos();
+            int.TryParse(IdnumericUpDown.Text, out Id);
+            Limpiar();
+            productos = ProductosBLL.Buscar(Id);
+            if (productos != null)
+            {
+                MessageBox.Show("Producto encontrado");
+                LlenaCampo(productos);
+            }
+            else
+            {
+                MessageBox.Show("Producton no encotnrado");
+            }
+
 
         }
+
     }
 }
