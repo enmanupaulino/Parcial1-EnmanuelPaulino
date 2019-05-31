@@ -38,7 +38,7 @@
             this.ExistencianumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CostonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.ModificarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -141,24 +141,24 @@
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // ModificarButton
+            // NuevoButton
             // 
-            this.ModificarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModificarButton.Image = global::Parcial1_EnmanuelPaulino.Properties.Resources.iconfinder_Notes_32519;
-            this.ModificarButton.Location = new System.Drawing.Point(116, 134);
-            this.ModificarButton.Name = "ModificarButton";
-            this.ModificarButton.Size = new System.Drawing.Size(100, 48);
-            this.ModificarButton.TabIndex = 7;
-            this.ModificarButton.Text = "Modificar";
-            this.ModificarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ModificarButton.UseVisualStyleBackColor = true;
-            this.ModificarButton.Click += new System.EventHandler(this.ModificarButton_Click);
+            this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.Image = global::Parcial1_EnmanuelPaulino.Properties.Resources.iconfinder_Notes_32519;
+            this.NuevoButton.Location = new System.Drawing.Point(12, 134);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(100, 48);
+            this.NuevoButton.TabIndex = 7;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click_1);
             // 
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::Parcial1_EnmanuelPaulino.Properties.Resources.iconfinder_Download_1031520;
-            this.GuardarButton.Location = new System.Drawing.Point(16, 134);
+            this.GuardarButton.Location = new System.Drawing.Point(118, 134);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(98, 48);
             this.GuardarButton.TabIndex = 6;
@@ -193,7 +193,7 @@
             this.Controls.Add(this.ExistencianumericUpDown);
             this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.ModificarButton);
+            this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -221,7 +221,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button GuardarButton;
-        private System.Windows.Forms.Button ModificarButton;
+        private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.NumericUpDown ExistencianumericUpDown;

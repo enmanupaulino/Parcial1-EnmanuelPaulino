@@ -19,7 +19,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             InitializeComponent();
         }
 
-       private void Limpiar()
+        private void Limpiar()
         {
             IdnumericUpDown.Value = 0;
             DescripciontextBox.Text = string.Empty;
@@ -27,6 +27,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             CostonumericUpDown.Value = 0;
             
         }
+
         private void LlenaCampo(Productos productos)
         {
             IdnumericUpDown.Value = productos.ProductoId;
@@ -34,7 +35,8 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             ExistencianumericUpDown.Value = productos.Existencia;
             CostonumericUpDown.Value = productos.Costo;
         }
-         private  Productos LlenaClase()
+
+        private  Productos LlenaClase()
         {
             Productos productos = new Productos();
             productos.ProductoId = 0;
@@ -48,7 +50,6 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             Productos productos = new Productos();
             return (productos != null);
         }
-
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
@@ -90,11 +91,6 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             return paso;
         }
 
-        private void ModificarButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             MyErrorProvider.Clear();
@@ -128,5 +124,10 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
 
         }
 
+        private void NuevoButton_Click_1(object sender, EventArgs e)
+        {
+            Limpiar();
+
+        }
     }
 }
