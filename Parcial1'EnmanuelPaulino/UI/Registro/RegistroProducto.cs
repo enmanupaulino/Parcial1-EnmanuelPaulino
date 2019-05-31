@@ -57,7 +57,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             if (!Validar())
                 return;
             productos = LlenaClase();
-            Limpiar();
+         
             //determinar si es guardar o modificar
             if (IdnumericUpDown.Value == 0)
                 paso = ProductosBLL.Guardar(productos);
@@ -97,7 +97,15 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            
+            MyErrorProvider.Clear();
+            int Id;
+            int.TryParse(IdnumericUpDown.Text, out Id);
+            Limpiar();
+            if (ProductosBLL.Eliminar(Id))
+                MessageBox.Show("Producto Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MyErrorProvider.SetError(IdnumericUpDown, "Nose pudo elimiar el producto");
+           
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -105,7 +113,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             int Id;
             Productos productos = new Productos();
             int.TryParse(IdnumericUpDown.Text, out Id);
-            Limpiar();
+
             productos = ProductosBLL.Buscar(Id);
             if (productos != null)
             {
