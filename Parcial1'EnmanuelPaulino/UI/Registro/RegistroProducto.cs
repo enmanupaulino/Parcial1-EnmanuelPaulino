@@ -25,6 +25,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             DescripciontextBox.Text = string.Empty;
             ExistencianumericUpDown.Value = 0;
             CostonumericUpDown.Value = 0;
+            MyErrorProvider.Clear();
             
         }
 
@@ -39,15 +40,17 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
         private  Productos LlenaClase()
         {
             Productos productos = new Productos();
+
             productos.ProductoId = 0;
             productos.Descripcion = DescripciontextBox.Text;
             productos.Existencia = 0;
             productos.Costo = 0;
             return productos;
         }
+
         private bool ExisteEnLaBaseDeDatos()
         {
-            Productos productos = new Productos();
+            Productos productos = ProductosBLL.Buscar((int)IdnumericUpDown.Value);
             return (productos != null);
         }
 
@@ -73,11 +76,15 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             }
             //informar resultado
             if (paso)
+            {
                 MessageBox.Show("Producto Guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
             else
                 MessageBox.Show("Error al guardar prodcuto", "fallo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
         private bool Validar()
         {
             bool paso = true;
@@ -109,7 +116,6 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             int Id;
             Productos productos = new Productos();
             int.TryParse(IdnumericUpDown.Text, out Id);
-
             productos = ProductosBLL.Buscar(Id);
             if (productos != null)
             {
