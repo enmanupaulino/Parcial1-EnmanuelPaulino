@@ -18,11 +18,6 @@ namespace Parcial1_EnmanuelPaulino
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void InventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroProducto f = new RegistroProducto();

@@ -76,8 +76,9 @@ namespace Parcial1_EnmanuelPaulino.BLL
             }
             return paso;
         }
-        public static   Productos Buscar (int Id)
+        public static Productos Buscar (int Id)
         {
+
             Contexto contexto = new Contexto();
             Productos productos = new Productos();
             try
