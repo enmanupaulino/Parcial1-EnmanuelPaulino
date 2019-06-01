@@ -128,7 +128,6 @@
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Script\Script.sql" />
     <None Include="Resources\iconfinder_f-cross_256_282471.png" />
     <None Include="Resources\iconfinder_Notes_32519.png" />
     <None Include="Resources\iconfinder_Download_1031520.png" />
@@ -145,6 +144,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Script\Script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

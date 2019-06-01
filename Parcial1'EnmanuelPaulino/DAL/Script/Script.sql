@@ -1,8 +1,10 @@
 CREATE DATABASE ProductoDb
 GO
+Use master
 
-USE ProductoDb
-create table RegistroProductos(
+create database ProductoDb
+use ProductoDB
+create table Productos(
 
 ProductoId int primary key identity ,
 Descripcion varchar (max),
@@ -11,4 +13,14 @@ Costo decimal ,
 ValorInventario decimal
 
 ) 
-GO
+
+
+create table Inventario(
+    InventarioId int primary key identity ,
+	ProductoId INT ,
+    TotalInventario decimal,
+	foreign key (ProductoId) references Productos(ProductoId)
+)
+go
+
+
