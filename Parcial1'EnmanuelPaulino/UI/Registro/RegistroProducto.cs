@@ -41,10 +41,11 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
         {
             Productos productos = new Productos();
 
-            productos.ProductoId = 0;
+            productos.ProductoId = Convert.ToInt32(IdnumericUpDown.Value);
             productos.Descripcion = DescripciontextBox.Text;
-            productos.Existencia = 0;
-            productos.Costo = 0;
+            productos.Existencia = Convert.ToInt32(ExistencianumericUpDown.Value);
+
+            productos.Costo = Convert.ToInt32(CostonumericUpDown.Value);
             return productos;
         }
 
@@ -61,10 +62,13 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             if (!Validar())
                 return;
             productos = LlenaClase();
-         
+
             //determinar si es guardar o modificar
             if (IdnumericUpDown.Value == 0)
+            {
                 paso = ProductosBLL.Guardar(productos);
+               
+            }
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
@@ -72,7 +76,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
                     MessageBox.Show("No se puede modificar un producto no exixtente");
                     return;
                 }
-                paso = ProductosBLL.Modifircar(productos);
+                paso = ProductosBLL.Modificar(productos);
             }
             //informar resultado
             if (paso)

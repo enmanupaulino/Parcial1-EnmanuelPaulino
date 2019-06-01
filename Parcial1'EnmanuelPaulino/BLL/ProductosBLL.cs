@@ -18,7 +18,9 @@ namespace Parcial1_EnmanuelPaulino.BLL
             try
             {
                 if (contexto.productos.Add(productos) != null)
-                    paso = contexto.SaveChanges() > 0;
+                   paso = (contexto.SaveChanges() > 0);  
+
+             
 
             }
             catch (Exception)
@@ -32,7 +34,7 @@ namespace Parcial1_EnmanuelPaulino.BLL
             return paso;
 
         }
-        public static bool Modifircar (Productos productos)
+       public static bool Modificar (Productos productos)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
