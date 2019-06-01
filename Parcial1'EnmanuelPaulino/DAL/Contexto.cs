@@ -11,6 +11,7 @@ namespace Parcial1_EnmanuelPaulino.DAL
     public class Contexto : DbContext
     {
         public DbSet<Productos> productos { get; set; }
+        public DbSet<TotalInventarios> totalInventarios { get; set; }
         public Contexto() : base("ConStr") { }
 
     }

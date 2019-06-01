@@ -115,7 +115,7 @@
             // 
             // ExistencianumericUpDown
             // 
-            this.ExistencianumericUpDown.DecimalPlaces = 3;
+            this.ExistencianumericUpDown.DecimalPlaces = 2;
             this.ExistencianumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExistencianumericUpDown.Location = new System.Drawing.Point(175, 85);
             this.ExistencianumericUpDown.Margin = new System.Windows.Forms.Padding(4);
@@ -131,7 +131,7 @@
             // 
             // CostonumericUpDown
             // 
-            this.CostonumericUpDown.DecimalPlaces = 3;
+            this.CostonumericUpDown.DecimalPlaces = 2;
             this.CostonumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CostonumericUpDown.Location = new System.Drawing.Point(175, 121);
             this.CostonumericUpDown.Margin = new System.Windows.Forms.Padding(4);
@@ -162,7 +162,7 @@
             // 
             // ValorInventarionumericUpDown
             // 
-            this.ValorInventarionumericUpDown.DecimalPlaces = 3;
+            this.ValorInventarionumericUpDown.DecimalPlaces = 2;
             this.ValorInventarionumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ValorInventarionumericUpDown.Location = new System.Drawing.Point(175, 181);
             this.ValorInventarionumericUpDown.Margin = new System.Windows.Forms.Padding(4);
