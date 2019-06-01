@@ -25,8 +25,9 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             DescripciontextBox.Text = string.Empty;
             ExistencianumericUpDown.Value = 0;
             CostonumericUpDown.Value = 0;
+            ValorInventarionumericUpDown.Value = 0;
             MyErrorProvider.Clear();
-            
+
         }
 
         private void LlenaCampo(Productos productos)
@@ -35,17 +36,18 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             DescripciontextBox.Text = productos.Descripcion;
             ExistencianumericUpDown.Value = productos.Existencia;
             CostonumericUpDown.Value = productos.Costo;
+            ValorInventarionumericUpDown.Value = productos.ValorInventario;
         }
 
-        private  Productos LlenaClase()
+        private Productos LlenaClase()
         {
             Productos productos = new Productos();
 
             productos.ProductoId = Convert.ToInt32(IdnumericUpDown.Value);
             productos.Descripcion = DescripciontextBox.Text;
             productos.Existencia = Convert.ToDecimal(ExistencianumericUpDown.Value);
-
             productos.Costo = Convert.ToDecimal(CostonumericUpDown.Value);
+            productos.ValorInventario = Convert.ToDecimal(ValorInventarionumericUpDown.Value);
             return productos;
         }
 
@@ -67,7 +69,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
             if (IdnumericUpDown.Value == 0)
             {
                 paso = ProductosBLL.Guardar(productos);
-               
+
             }
             else
             {
@@ -112,7 +114,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
                 MessageBox.Show("Producto Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MyErrorProvider.SetError(IdnumericUpDown, "Nose pudo elimiar el producto");
-           
+
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -138,6 +140,22 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
         {
             Limpiar();
 
+        }
+        private void Calcular()
+        {
+            decimal existencia = Convert.ToDecimal(ExistencianumericUpDown.Value);
+            decimal costo = Convert.ToDecimal(CostonumericUpDown.Value);
+            decimal Resultado = existencia * costo;
+            ValorInventarionumericUpDown.Value = Resultado;
+        }
+        private void ExistencianumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            Calcular();
+        }
+
+        private void CostonumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            Calcular();
         }
     }
 }
