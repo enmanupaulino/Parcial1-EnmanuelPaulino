@@ -110,7 +110,7 @@
             this.ExistencianumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExistencianumericUpDown.Location = new System.Drawing.Point(96, 67);
             this.ExistencianumericUpDown.Maximum = new decimal(new int[] {
-            1,
+            10000,
             0,
             0,
             0});
@@ -120,8 +120,14 @@
             // 
             // CostonumericUpDown
             // 
+            this.CostonumericUpDown.DecimalPlaces = 3;
             this.CostonumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CostonumericUpDown.Location = new System.Drawing.Point(96, 93);
+            this.CostonumericUpDown.Location = new System.Drawing.Point(96, 96);
+            this.CostonumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.CostonumericUpDown.Name = "CostonumericUpDown";
             this.CostonumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.CostonumericUpDown.TabIndex = 11;

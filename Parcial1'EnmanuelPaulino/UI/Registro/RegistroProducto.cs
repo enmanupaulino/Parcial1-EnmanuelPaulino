@@ -43,9 +43,9 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
 
             productos.ProductoId = Convert.ToInt32(IdnumericUpDown.Value);
             productos.Descripcion = DescripciontextBox.Text;
-            productos.Existencia = Convert.ToInt32(ExistencianumericUpDown.Value);
+            productos.Existencia = Convert.ToDecimal(ExistencianumericUpDown.Value);
 
-            productos.Costo = Convert.ToInt32(CostonumericUpDown.Value);
+            productos.Costo = Convert.ToDecimal(CostonumericUpDown.Value);
             return productos;
         }
 
