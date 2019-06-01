@@ -12,7 +12,7 @@ namespace Parcial1_EnmanuelPaulino.BLL
 {
     public class TotalInventariosBLL
     {
-        public static bool Guardar(TotalInventarios totalInventarios)
+        public static bool Guardar(Inventarios totalInventarios)
         {
             bool paso = true;
             Contexto contexto = new Contexto();
@@ -35,7 +35,7 @@ namespace Parcial1_EnmanuelPaulino.BLL
             return paso;
 
         }
-        public static bool Modificar(TotalInventarios totalInventarios)
+        public static bool Modificar(Inventarios totalInventarios)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -79,11 +79,11 @@ namespace Parcial1_EnmanuelPaulino.BLL
             }
             return paso;
         }
-        public static TotalInventarios Buscar(int Id)
+        public static Inventarios Buscar(int Id)
         {
 
             Contexto contexto = new Contexto();
-            TotalInventarios totalInventarios = new TotalInventarios();
+            Inventarios totalInventarios = new Inventarios();
             try
             {
                 totalInventarios = contexto.totalInventarios.Find(Id);
@@ -104,10 +104,10 @@ namespace Parcial1_EnmanuelPaulino.BLL
         }
 
 
-        public static List<TotalInventarios> GetList(Expression<Func<TotalInventarios, bool>> totalInventario)
+        public static List<Inventarios> GetList(Expression<Func<Inventarios, bool>> totalInventario)
         {
 
-            List<TotalInventarios> Lista = new List<TotalInventarios>();
+            List<Inventarios> Lista = new List<Inventarios>();
             Contexto contexto = new Contexto();
             try
             {

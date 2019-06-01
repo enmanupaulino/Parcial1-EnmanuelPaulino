@@ -17,6 +17,13 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
         public RegistroProducto()
         {
             InitializeComponent();
+            List<Inventarios> inventario = TotalInventariosBLL.GetList(x=>true);
+            if(inventario.Count==0)
+            {
+                Inventarios inventarios = new Inventarios();
+                inventarios.TotalInventario = 0;
+                TotalInventariosBLL.Guardar(inventarios);
+            }
         }
 
         private void Limpiar()
@@ -67,8 +74,10 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
 
             //determinar si es guardar o modificar
             if (IdnumericUpDown.Value == 0)
+            
             {
                 paso = ProductosBLL.Guardar(productos);
+               
 
             }
             else

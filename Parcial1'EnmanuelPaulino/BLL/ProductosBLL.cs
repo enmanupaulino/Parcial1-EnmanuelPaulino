@@ -13,26 +13,22 @@ namespace Parcial1_EnmanuelPaulino.BLL
     {
         public static bool Guardar(Productos productos)
         {
-            bool paso = true;
+            bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.productos.Add(productos) != null)
-                   paso = (contexto.SaveChanges() > 0);  
-
-             
-
+                if(contexto.productos.Add(productos) != null)
+                {
+                   var total = contexto.totalInventarios.Find(1);
+                    total.TotalInventario += productos.ValorInventario;
+                   paso = (contexto.SaveChanges() > 0);
+                }
             }
             catch (Exception)
-            {
-                throw;
-            }
+            { throw;}
             finally
-            {
-                contexto.Dispose();
-            }
+            {contexto.Dispose();}
             return paso;
-
         }
        public static bool Modificar (Productos productos)
         {

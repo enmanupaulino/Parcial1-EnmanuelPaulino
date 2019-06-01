@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Parcial1_EnmanuelPaulino.BLL;
+using Parcial1_EnmanuelPaulino.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +18,13 @@ namespace Parcial1_EnmanuelPaulino.UI.Consulta
         {
             InitializeComponent();
         }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+        private void TotalInventario_Load(object sender, EventArgs e)
         {
-            
+            var TotalInventario = TotalInventariosBLL.Buscar(1);
+            if (TotalInventario == null)
+                TotalTextBox.Text = string.Empty;
+            else
+                TotalTextBox.Text = TotalInventario.TotalInventario.ToString();
         }
     }
 }
