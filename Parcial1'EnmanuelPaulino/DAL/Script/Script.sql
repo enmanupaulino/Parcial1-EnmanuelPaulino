@@ -3,7 +3,7 @@ GO
 Use master
 
 create database ProductoDb
-use ProductoDB
+use ProductoDb
 create table Productos(
 
 ProductoId int primary key identity ,
@@ -15,12 +15,10 @@ ValorInventario decimal
 ) 
 
 
-create table Inventario(
-    InventarioId int primary key identity ,
-	ProductoId INT ,
+create table Inventarios(
+    InventarioId int primary key identity,
     TotalInventario decimal,
-	foreign key (ProductoId) references Productos(ProductoId)
 )
 go
 
-
+drop database ProductoDb

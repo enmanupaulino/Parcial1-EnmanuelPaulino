@@ -11,6 +11,8 @@ namespace Parcial1_EnmanuelPaulino.BLL
 {
     public class ProductosBLL
     {
+        
+
         public static bool Guardar(Productos productos)
         {
             bool paso = false;
@@ -36,6 +38,8 @@ namespace Parcial1_EnmanuelPaulino.BLL
             Contexto contexto = new Contexto();
             try
             {
+                var buscar = ProductosBLL.Buscar(productos.ProductoId);
+                
                 contexto.Entry(productos).State = EntityState.Modified;
                 paso = (contexto.SaveChanges() > 0);
             }
@@ -54,14 +58,17 @@ namespace Parcial1_EnmanuelPaulino.BLL
         public static bool Eliminar (int Id)
         {
             bool paso = false;
+            
             Contexto contexto = new Contexto();
             try
             {
                 var eliminar = contexto.productos.Find(Id);
-                contexto.Entry(eliminar).State = EntityState.Deleted;
-                paso = (contexto.SaveChanges() > 0);
+                var total = contexto.totalInventarios.Find(1);
+                total.TotalInventario -= eliminar.ValorInventario;
 
-        
+                contexto.Entry(eliminar).State = EntityState.Deleted;
+
+                paso = (contexto.SaveChanges() > 0);
             }
             catch (Exception)
             {
@@ -97,7 +104,7 @@ namespace Parcial1_EnmanuelPaulino.BLL
             return productos;
 
         }
-
+        
 
         public static List<Productos> GetList(Expression<Func<Productos, bool>> productos) {
 
