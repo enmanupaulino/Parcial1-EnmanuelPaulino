@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
+            this.Refrescar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -51,11 +52,24 @@
             this.TotalTextBox.Size = new System.Drawing.Size(178, 38);
             this.TotalTextBox.TabIndex = 1;
             // 
+            // Refrescar
+            // 
+            this.Refrescar.Image = global::Parcial1_EnmanuelPaulino.Properties.Resources.iconfinder_view_refresh_118801;
+            this.Refrescar.Location = new System.Drawing.Point(230, 78);
+            this.Refrescar.Name = "Refrescar";
+            this.Refrescar.Size = new System.Drawing.Size(107, 38);
+            this.Refrescar.TabIndex = 2;
+            this.Refrescar.Text = "Refrescar";
+            this.Refrescar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Refrescar.UseVisualStyleBackColor = true;
+            this.Refrescar.Click += new System.EventHandler(this.Refrescar_Click);
+            // 
             // TotalInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 168);
+            this.ClientSize = new System.Drawing.Size(390, 191);
+            this.Controls.Add(this.Refrescar);
             this.Controls.Add(this.TotalTextBox);
             this.Controls.Add(this.label1);
             this.Name = "TotalInventario";
@@ -70,5 +84,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TotalTextBox;
+        private System.Windows.Forms.Button Refrescar;
     }
 }

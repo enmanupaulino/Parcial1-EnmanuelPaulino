@@ -28,6 +28,9 @@ namespace Parcial1_EnmanuelPaulino.UI.Consulta
                 TotalTextBox.Text = TotalInventario.TotalInventario.ToString();
         }
 
-        
+        private void Refrescar_Click(object sender, EventArgs e)
+        {
+            TotalInventario_Load(sender, e);
+        }
     }
 }

@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Script\Script.sql" />
+    <None Include="Resources\iconfinder_view-refresh_118801.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
