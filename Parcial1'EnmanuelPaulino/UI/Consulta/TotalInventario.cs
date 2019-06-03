@@ -18,6 +18,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Consulta
         {
             InitializeComponent();
         }
+       
         private void TotalInventario_Load(object sender, EventArgs e)
         {
             var TotalInventario = TotalInventariosBLL.Buscar(1);
@@ -26,5 +27,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Consulta
             else
                 TotalTextBox.Text = TotalInventario.TotalInventario.ToString();
         }
+
+        
     }
 }
