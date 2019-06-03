@@ -3,6 +3,7 @@ using Parcial1_EnmanuelPaulino.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -67,10 +68,20 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             Productos productos = new Productos();
+            
             bool paso = false;
-            if (!Validar())
-                return;
+           
             productos = LlenaClase();
+            if (Validar(2))
+            {
+                MessageBox.Show("Llenar todos los campos marcados");
+                return;
+            }
+            if (ExistencianumericUpDown.Value <=0 || CostonumericUpDown.Value <=0)
+            {
+                MessageBox.Show("Debe ser mayor a 0");
+                return;
+            }
 
             //determinar si es guardar o modificar
             if (IdnumericUpDown.Value == 0)
@@ -100,7 +111,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
 
         }
 
-        private bool Validar()
+       /* private bool Validar()
         {
             bool paso = true;
             MyErrorProvider.Clear();
@@ -110,12 +121,49 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
                 DescripciontextBox.Focus();
                 paso = false;
             }
+            //if(IdnumericUpDown.Value == null){
+             MyErrorProvider.SetError(IdnumericUpDown, "favor
+            }
+            return paso;
+        }*/
+        public bool Validar(int error)
+        {
+            bool paso = false;
+
+            if (error == 1 && IdnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(IdnumericUpDown, "Llenar ID");
+                paso = true;
+            }
+            if (error == 2 && string.IsNullOrEmpty(DescripciontextBox.Text))
+            {
+                MyErrorProvider.SetError(DescripciontextBox, "Favor LLenar");
+                paso = true;
+            }
+            if (error == 3 && string.IsNullOrEmpty(CostonumericUpDown.Text))
+            {
+                MyErrorProvider.SetError(CostonumericUpDown, "Favor LLenar");
+                paso = true;
+            }
+            if (error == 4 && ExistencianumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(ExistencianumericUpDown, "Favor Llenar");
+                paso = true;
+            }
+            
+
             return paso;
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            MyErrorProvider.Clear();
+            if (Validar(1))
+            {
+                MessageBox.Show("El TipoID esta vacio", "Llene Campo",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //MyErrorProvider.Clear();
             int Id;
             int.TryParse(IdnumericUpDown.Text, out Id);
             Limpiar();
@@ -130,6 +178,12 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
         {
             int Id;
             Productos productos = new Productos();
+            if (Validar(1))
+            {
+                MessageBox.Show("El TipoID esta vacio", "Llene Campo",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             int.TryParse(IdnumericUpDown.Text, out Id);
             productos = ProductosBLL.Buscar(Id);
             if (productos != null)

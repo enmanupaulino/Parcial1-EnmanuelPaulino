@@ -172,6 +172,7 @@
             0,
             0});
             this.ValorInventarionumericUpDown.Name = "ValorInventarionumericUpDown";
+            this.ValorInventarionumericUpDown.ReadOnly = true;
             this.ValorInventarionumericUpDown.Size = new System.Drawing.Size(160, 29);
             this.ValorInventarionumericUpDown.TabIndex = 13;
             // 

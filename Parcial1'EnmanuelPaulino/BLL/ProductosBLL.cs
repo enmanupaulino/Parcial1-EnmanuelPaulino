@@ -39,7 +39,20 @@ namespace Parcial1_EnmanuelPaulino.BLL
             try
             {
                 var buscar = ProductosBLL.Buscar(productos.ProductoId);
-                
+                var total = TotalInventariosBLL.Buscar(1);
+                decimal descuento = 0;
+                if (productos.ValorInventario < buscar.ValorInventario)
+                {
+                    descuento = buscar.ValorInventario - productos.ValorInventario;
+                    total.TotalInventario -= descuento;
+                    TotalInventariosBLL.Modificar(total);
+                }
+                else
+                {
+                    descuento = productos.ValorInventario - buscar.ValorInventario;
+                    total.TotalInventario += descuento;
+                    TotalInventariosBLL.Modificar(total);
+                }
                 contexto.Entry(productos).State = EntityState.Modified;
                 paso = (contexto.SaveChanges() > 0);
             }
