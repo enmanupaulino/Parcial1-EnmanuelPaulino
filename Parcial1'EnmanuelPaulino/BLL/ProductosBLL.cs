@@ -32,6 +32,7 @@ namespace Parcial1_EnmanuelPaulino.BLL
             {contexto.Dispose();}
             return paso;
         }
+        
        public static bool Modificar (Productos productos)
         {
             bool paso = false;

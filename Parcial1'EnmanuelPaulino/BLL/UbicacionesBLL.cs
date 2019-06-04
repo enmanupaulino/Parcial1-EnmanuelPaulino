@@ -32,7 +32,24 @@ namespace Parcial1_EnmanuelPaulino.BLL
             }
             return paso;
         }
-        
+        public static bool NoDuplicado(string descripcion)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+            try
+            {
+                if (contexto.ubicaciones.Any(p => p.Descripcion.Equals(descripcion)))
+                {
+                    paso = true; 
+                }
+                
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
         public  static bool Modificar (Ubicaciones ubicaciones)
         {
             bool paso = false;
