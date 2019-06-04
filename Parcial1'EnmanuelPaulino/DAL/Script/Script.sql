@@ -19,6 +19,14 @@ create table Inventarios(
     InventarioId int primary key identity,
     TotalInventario decimal,
 )
+select * from Inventarios;
 go
 
+create  table Ubicaciones (
+  
+  UbicacionId int primary key identity,
+  Descripcion varchar (max)
+
+)
+drop table Inventario
 drop database ProductoDb

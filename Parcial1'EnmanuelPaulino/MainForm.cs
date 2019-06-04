@@ -30,5 +30,11 @@ namespace Parcial1_EnmanuelPaulino
             TotalInventario f = new TotalInventario();
             f.Show();
         }
+
+        private void UbicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ubicacione f = new Ubicacione();
+            f.Show();
+        }
     }
 }

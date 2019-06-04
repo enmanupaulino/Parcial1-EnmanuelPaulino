@@ -44,6 +44,9 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
+            this.UbicacionComboBox = new System.Windows.Forms.ComboBox();
+            this.AgregarButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExistencianumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
@@ -153,7 +156,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 181);
+            this.label5.Location = new System.Drawing.Point(17, 226);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 24);
@@ -164,7 +167,7 @@
             // 
             this.ValorInventarionumericUpDown.DecimalPlaces = 2;
             this.ValorInventarionumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValorInventarionumericUpDown.Location = new System.Drawing.Point(175, 181);
+            this.ValorInventarionumericUpDown.Location = new System.Drawing.Point(175, 226);
             this.ValorInventarionumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.ValorInventarionumericUpDown.Maximum = new decimal(new int[] {
             10000000,
@@ -181,7 +184,7 @@
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarButton.Image = global::Parcial1_EnmanuelPaulino.Properties.Resources.iconfinder_f_cross_256_282471;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarButton.Location = new System.Drawing.Point(343, 246);
+            this.EliminarButton.Location = new System.Drawing.Point(340, 319);
             this.EliminarButton.Margin = new System.Windows.Forms.Padding(4);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -196,7 +199,7 @@
             // 
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::Parcial1_EnmanuelPaulino.Properties.Resources.iconfinder_Notes_32519;
-            this.NuevoButton.Location = new System.Drawing.Point(16, 246);
+            this.NuevoButton.Location = new System.Drawing.Point(13, 319);
             this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(133, 59);
@@ -210,7 +213,7 @@
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::Parcial1_EnmanuelPaulino.Properties.Resources.iconfinder_Download_1031520;
-            this.GuardarButton.Location = new System.Drawing.Point(175, 246);
+            this.GuardarButton.Location = new System.Drawing.Point(172, 319);
             this.GuardarButton.Margin = new System.Windows.Forms.Padding(4);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(131, 59);
@@ -234,11 +237,42 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
+            // UbicacionComboBox
+            // 
+            this.UbicacionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.UbicacionComboBox.FormattingEnabled = true;
+            this.UbicacionComboBox.Location = new System.Drawing.Point(175, 173);
+            this.UbicacionComboBox.Name = "UbicacionComboBox";
+            this.UbicacionComboBox.Size = new System.Drawing.Size(121, 24);
+            this.UbicacionComboBox.TabIndex = 15;
+            // 
+            // AgregarButton
+            // 
+            this.AgregarButton.Location = new System.Drawing.Point(312, 174);
+            this.AgregarButton.Name = "AgregarButton";
+            this.AgregarButton.Size = new System.Drawing.Size(103, 23);
+            this.AgregarButton.TabIndex = 16;
+            this.AgregarButton.Text = "Agregar";
+            this.AgregarButton.UseVisualStyleBackColor = true;
+            this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 180);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Ubicacion";
+            // 
             // RegistroProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 338);
+            this.ClientSize = new System.Drawing.Size(547, 422);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.AgregarButton);
+            this.Controls.Add(this.UbicacionComboBox);
             this.Controls.Add(this.ValorInventarionumericUpDown);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CostonumericUpDown);
@@ -284,5 +318,8 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.NumericUpDown ValorInventarionumericUpDown;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button AgregarButton;
+        private System.Windows.Forms.ComboBox UbicacionComboBox;
+        private System.Windows.Forms.Label label6;
     }
 }

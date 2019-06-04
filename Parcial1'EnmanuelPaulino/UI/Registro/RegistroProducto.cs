@@ -18,6 +18,7 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
         public RegistroProducto()
         {
             InitializeComponent();
+            LlenarComboBox();
             List<Inventarios> inventario = TotalInventariosBLL.GetList(x=>true);
             if(inventario.Count==0)
             {
@@ -26,7 +27,14 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
                 TotalInventariosBLL.Guardar(inventarios);
             }
         }
+        public  void LlenarComboBox()
+        {
 
+            UbicacionComboBox.DataSource = null;
+            UbicacionComboBox.DataSource = UbicacionesBLL.GetList(x => true);
+            UbicacionComboBox.ValueMember = "UbicacionId";
+            UbicacionComboBox.DisplayMember = "Descripcion";
+        }
         private void Limpiar()
         {
             IdnumericUpDown.Value = 0;
@@ -219,6 +227,13 @@ namespace Parcial1_EnmanuelPaulino.UI.Registro
         private void CostonumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             Calcular();
+        }
+
+        private void AgregarButton_Click(object sender, EventArgs e)
+        {
+            Ubicacione f = new Ubicacione();
+            f.ShowDialog();
+            LlenarComboBox();
         }
     }
 }
